@@ -18,7 +18,7 @@
     "buildcss": "NODE_ENV=production npx tailwindcss -i ./tailwindcss/tailwindcss.css -o ./public/css/tailwindcss/tailwindcss.css --minify",
     "devcss": "npx tailwindcss -i ./tailwindcss/tailwindcss.css -o ./public/css/tailwindcss/tailwindcss.css -w",
     "dev": "nodemon index.js",
-    "start": "node index.js"
+    "serve": "node index.js"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.3.3",
