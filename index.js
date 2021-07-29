@@ -26,6 +26,6 @@ app.use(function(req, res, next) {
     res.status(404).send("404 NOT FOUND")
 })
 
-const server = http.listen(process.env.PORT || 3000, () =>{
+const server = http.listen(process.env.PORT || 8989, () =>{
     console.log("Listening on " + server.address().address, server.address().port)
 })

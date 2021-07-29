@@ -6,9 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#7e22ce">
     <title>MiChat</title>
+    <%- include('cdn/home') %>
     <link rel="stylesheet" href="/css/tailwindcss/tailwindcss.css">
 </head>
-<body>
-    
+<body class="bg-truegray-200 h-screen xsm:min-w-[300px]">
+    <div class="container h-full">
+        <div class="trasition-all fixed px-1 py-3 bg-white h-full shadow-2xl md:max-h-14 md:w-full md:bottom-0 md:py-0">
+            <div class="flex flex-col gap-4 justify-center items-center h-full md:flex-row md:gap-5 xsm:gap-3">
+                <a href="#" class="rpl p-2 rounded-md text-3xl md:text-2xl text-purple-600 cursor-pointer">
+                    <i class="fad fa-home"></i>
+                </a>
+                <a href="#" class="rpl p-2 rounded-md text-3xl md:text-2xl text-purple-600 cursor-pointer">
+                    <i class="fad fa-users"></i>
+                </a>
+                <a href="#" class="rpl p-2 rounded-xl text-3xl md:text-2xl text-purple-600 cursor-pointer">
+                    <i class="fas fa-plus-circle"></i>
+                </a>
+                <a href="#" class="rpl p-2 rounded-md text-3xl md:text-2xl text-purple-600 cursor-pointer">
+                    <i class="fad fa-search"></i>
+                </a>
+                <a href="#" class="rpl p-2 rounded-md text-3xl md:text-2xl text-purple-600 cursor-pointer">
+                    <i class="fad fa-user"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="/js/ripple.js"></script>
 </body>
 </html>
