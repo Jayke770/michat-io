@@ -30,17 +30,44 @@
 						<input class="transition-all rounded-md w-full py-2 px-3 border outline-none border-gray-300 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:border-gray-100 " type="password" name="password" placeholder="Password" autocomplete="off" required>
 					</div>
 					<div class="mt-3">
-						<button class="cursor-pointer rounded-md w-full py-2 px-3 bg-purple-700 text-gray-50 font-medium text-lg" type="submit">Login</button>
+						<button class="cursor-pointer rounded-md w-full py-2 px-3 bg-purple-700 text-gray-50 font-medium text-lg transition-all focus:ring-offset-2 focus:ring-2 focus:ring-purple-600" type="submit">Login</button>
 					</div>
 				</form>
 				<div class="mt-4 flex flex-col justify-center w-full pb-3">
 					<p class="w-full text-center font-normal text-gray-900">Don't have an account? </p>
 					<div class="w-full flex justify-center items-center mt-2">
-						<a href="#" class="underline cursor-pointer font-medium text-gray-900">Sign Up here!</a>
+						<a href="#" class="open_sign_up underline cursor-pointer font-medium text-gray-900 hover:text-purple-700 transition-all">Sign Up here!</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- Sign Up -->
+	<div class="sign_up hidden fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 place-items-center w-full h-full bg-gray-900/50">
+		<div animate-out="animate__animated animate__zoomOutLeft" animate-in="animate__animated animate__jackInTheBox" class="signup_main ms-900 w-96 md:w-[90%] h-auto bg-white rounded-lg shadow-lg p-3">
+			<a class="close_signup float-right text-rose-500 text-3xl cursor-pointer">
+				<i class="fad fa-times-circle"></i>
+			</a>
+			<div class="flex">
+				<span class="border-l-8 border-purple-600 py-2 pl-2 font-bold tracking-wide text-2xl text-gray-900">Getting Started</span>
+			</div>
+			<form class="signup px-3 pt-3 mb-3">
+				<div class="mt-3 grid grid-cols-2 gap-2 md:grid-cols-1">
+					<input class="transition-all rounded-md w-full py-2 px-3 border outline-none border-gray-300 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:border-gray-100 " type="text" name="fname" placeholder="Firstname" autocomplete="off" required>
+					<input class="transition-all rounded-md w-full py-2 px-3 border outline-none border-gray-300 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:border-gray-100 " type="text" name="lname" placeholder="Lastname" autocomplete="off" required>
+				</div>
+				<div class="mt-3">
+					<input class="transition-all rounded-md w-full py-2 px-3 border outline-none border-gray-300 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:border-gray-100 " type="text" name="username" placeholder="Username" autocomplete="off" required>
+				</div>
+				<div class="mt-3">
+					<input class="transition-all rounded-md w-full py-2 px-3 border outline-none border-gray-300 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:border-gray-100 " type="password" name="password" placeholder="Password" autocomplete="off" required>
+				</div>
+				<div class="mt-4">
+					<button class="cursor-pointer rounded-md w-full py-2 px-3 bg-purple-700 text-gray-50 font-medium text-lg transition-all focus:ring-offset-2 focus:ring-2 focus:ring-purple-600" type="submit">Sign Up</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="/js/index.js"></script>
 </body>
 </html>
