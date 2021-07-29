@@ -21,6 +21,10 @@ app.set('view engine', 'ejs')
 
 //app routes 
 app.use(appRoute)
+//404 not found
+app.use(function(req, res, next) {
+    res.status(404).send("404 NOT FOUND")
+})
 
 const server = http.listen(process.env.PORT || 3000, () =>{
     console.log("Listening on " + server.address().address, server.address().port)
