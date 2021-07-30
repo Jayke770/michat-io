@@ -11,7 +11,7 @@
 </head>
 <body class="bg-truegray-200 h-screen xsm:min-w-[300px]">
     <div class="container h-full">
-        <div class="trasition-all fixed px-1 py-3 bg-white h-full shadow-2xl md:max-h-14 md:w-full md:bottom-0 md:py-0">
+        <div class="trasition-all z-10 fixed px-1 py-3 bg-white h-full shadow-2xl md:max-h-14 md:w-full md:bottom-0 md:py-0">
             <div class="flex flex-col gap-4 justify-center items-center h-full md:flex-row md:gap-8 xsm:gap-3 transition-all">
                 <a href="#" class="rpl p-2 rounded-md text-3xl md:text-2xl text-purple-600 cursor-pointer">
                     <i class="fad fa-home"></i>
@@ -30,19 +30,41 @@
                 </a>
             </div>
         </div>
-        <div class="h-screen ml-24 md:ml-0 md:w-full flex md:justify-center">
-            <div class="overflow-y-scroll px-4 py-3 md:w-full md:px-2">
-               <div class="flex flex-col gap-4 md:w-full md:items-center">
-                    <!-- For user post -->
-                    <% for( let i = 0; i < 20; i++ ) { %>
-                        <div class="md:last:mb-20 w-96 sm:w-[99%] h-[500px] bg-gray-50 rounded-xl shadow-lg">
-                            <video src="/assets/sample.mp4" controls class="h-full w-full object-cover rounded-xl"></video>
+        <div class="h-screen ml-24 md:ml-0 md:h-[92vh]">
+           <div class="w-96 h-full md:w-full md:flex md:justify-center md:h-[99%] xsm:w-full">
+                <div class="py-8 w-96 h-full md:py-2 xsm:w-full xsm:py-0">
+                    <div class="w-full h-full">
+                        <div class="mi_chat_post swiper-container h-full">
+                            <div class="swiper-wrapper">
+                            <% for( let i = 1; i < 6; i++ ) { %>
+                                <div class="swiper-slide bg-purple-500/40 shadow-xl rounded-xl xsm:rounded-none xsm:shadow-none">
+                                    <div class="w-full h-full">
+                                        <video src="/assets/sample.mp4" controls class="rounded-xl xsm:rounded-none h-full w-full"></video>
+                                    </div>
+                                </div>
+                            <% } %>
+                            </div>
                         </div>
-                     <% } %>
-               </div>
-            </div>
+                    </div>
+                </div>
+           </div>
         </div>
     </div>
     <script src="/js/ripple.js"></script>
+    <script>
+        const swiper = new Swiper(".mi_chat_post", {
+            direction: 'vertical',
+            spaceBetween: 10,
+            slidesPerView: 1,
+            mousewheel: true,
+            grabCursor: true,
+        })
+        swiper.on('reachEnd', function () {
+            console.log('last slide');
+        })
+        swiper.on('slideChange', function (e) {
+            console.log(e);
+        })
+    </script>
 </body>
 </html>
