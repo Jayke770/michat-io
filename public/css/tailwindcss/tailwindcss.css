@@ -955,6 +955,13 @@ video {
   border-bottom-left-radius: 0.75rem;
 }
 
+@media (max-width: 450px) {
+  .vjs-control-bar {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+}
+
 /* end of video.js*/
 
 /*scrollbar */
