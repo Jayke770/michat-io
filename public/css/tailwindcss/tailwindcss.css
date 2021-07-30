@@ -1120,6 +1120,14 @@ video {
     height: 99%;
   }
 
+  .md\:h-\[98\%\] {
+    height: 98%;
+  }
+
+  .md\:h-\[98\.5\%\] {
+    height: 98.5%;
+  }
+
   .md\:max-h-14 {
     max-height: 3.5rem;
   }
