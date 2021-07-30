@@ -1,4 +1,2 @@
-# Michat.io
-A Simple Chat Application
-
-Demo Link https://michat-io.herokuapp.com/
+# MiChat 
+A modern way to connect with friends and family
