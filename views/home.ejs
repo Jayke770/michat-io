@@ -11,8 +11,9 @@
 </head>
 <body class="bg-truegray-200 h-screen xsm:min-w-[300px]">
     <div class="container h-full">
+        <!-- Navigation -->
         <div class="trasition-all z-10 fixed px-1 py-3 bg-white h-full shadow-2xl md:max-h-14 md:w-full md:bottom-0 md:py-0">
-            <div class="flex flex-col gap-4 justify-center items-center h-full md:flex-row md:gap-8 xxsm:gap-3 transition-all">
+            <div class="flex flex-col gap-4 justify-center items-center h-full md:flex-row md:gap-8 xxsm:gap-5 transition-all">
                 <a href="#" class="rpl p-2 rounded-md text-3xl md:text-2xl text-purple-600 cursor-pointer">
                     <i class="fad fa-home"></i>
                 </a>    
@@ -30,6 +31,7 @@
                 </a>
             </div>
         </div>
+        <!-- Posts -->
         <div class="h-screen ml-24 md:ml-0 md:h-[92vh] flex">
            <div class="w-96 h-full md:w-full md:flex md:justify-center xsm:w-full">
                 <div class="py-8 w-96 h-full md:py-2 xsm:w-full xsm:py-0">
@@ -38,11 +40,18 @@
                             <div class="swiper-wrapper">
                             <% for( let i = 1; i < 6; i++ ) { %>
                                 <div class="swiper-slide bg-purple-500/40 shadow-xl rounded-xl xsm:rounded-none xsm:shadow-none">
-                                    <div class="w-full h-full">
+                                    <div class="w-full h-full relative">
                                         <video data-setup="{}" controls preload="none" class="video-js vjs-theme-fantasy rounded-xl xsm:rounded-none h-full w-full">
                                             <source src="/assets/sample.mp4" type="video/mp4">
                                             <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
                                         </video>
+                                        <menu class="absolute bottom-2 right-1 flex justify-center items-center">
+                                            <div class="flex flex-col gap-2 px-2 w-full justify-center items-center">
+                                                <a class="comment rpl text-amber-500 cursor-pointer p-2">
+                                                    <i class="fad fa-comment-lines text-3xl"></i>
+                                                </a>
+                                            </div>
+                                        </menu>
                                     </div>
                                 </div>
                             <% } %>
@@ -52,22 +61,88 @@
                 </div>
            </div>
         </div>
+        <div class="nty_msg transition-all fixed top-0 right-0 w-[62.5%] h-full xl:z-20 xl:w-[45%] md:w-full md:hidden">
+            <div class="transition-all flex flex-row w-full py-7 h-full md:py-0 md:items-end">
+                <!-- Comments -->
+                <div animate-out-mobile="animate__animated animate__fadeOut" animate-in-mobile="animate__animated animate__fadeInUp" animate-in="animate__animated animate__fadeInDown" class="michat_cmts trasition-all bg-gray-50 flex flex-col flex-[50%] h-[90vh] rounded-l-xl shadow-xl md:rounded-b-none md:rounded-t-xl">
+                    <div class="close_cmt w-full flex p-3 justify-center">
+                        <div class="bg-gray-500 h-2 w-[30%] rounded-lg"></div>
+                    </div>
+                    <div class="flex flex-col gap-4 py-2 px-3 w-full h-[85%] overflow-scroll">
+                        <% for( let i = 0; i < 20; i++ ) { %>
+                            <div class="cursor-pointer hover:border-purple-500 transition-all bg-white border-[0.4px] border-purple-500/30 shadow-lg max-h-96 w-full rounded-lg">
+                                <div class="flex flex-row p-2">
+                                    <img src="/assets/image.jpg" class="h-16 w-16 rounded-full object-cover" alt="Picture">
+                                    <div class="flex flex-col w-full h-full">
+                                       <div class="flex flex-row w-full items-center">
+                                            <span class="flex-[80%] ml-2 font-medium text-purple-600 sm:text-base">Jake Peregrino Velasco</span>
+                                            <div class="flex justify-end flex-[20%]">
+                                                <span class="float-right text-sm text-bluegray-700 sm:text-xs">1m</span>
+                                            </div>
+                                       </div>
+                                       <div class="flex justify-start pl-4 py-1">
+                                           <p class="text-bluegray-900 text-[15px] sm:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur mollitia doloribus deserunt maiores assumenda sed molestiae ab nesciunt, laborum reprehenderit sint fugit! Iure cumque, repudiandae vel unde omnis ducimus dignissimos?</p>
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="h-[15%] px-3 py-2">
+                        <div class="flex flex-row w-full h-full items-center">
+                            <a class="cursor-pointer text-purple-800">
+                                <i class="fad fa-plus-circle text-2xl"></i>
+                            </a>
+                            <div class="flex w-full h-full ml-2 border border-purple-500 px-1 rounded-xl">
+                                <div class="trasition-all px-3 py-2 w-full sm:text-base outline-none overflow-scroll text-bluegray-500 focus:text-bluegray-900" contenteditable="true">Message</div>
+                                <button type="button" class="rpl outline-none px-3 py-2 text-xl">
+                                    <i class="fad fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Messages & Notifications -->
+                <div class="border-l-2 border-purple-500 bg-gray-50 flex-[50%] h-[90vh] shadow-xl xl:hidden">
+                    <michat-tab class="mt-2 flex flex-row justify-center items-center gap-2 py-1 px-3">
+                        <a class="rpl hover:bg-purple-200 rounded-lg cursor-pointer px-3 py-2">
+                            <i class="fad fa-comment-lines text-xl text-purple-700"></i> 
+                            <span class="text-lg font-normal">Messages</span>
+                        </a>
+                        <a class="rpl hover:bg-purple-200 rounded-lg cursor-pointer px-3 py-2">
+                            <i class="fad fa-bell text-xl text-purple-700"></i> 
+                            <span class="text-lg font-normal">Notifications</span>
+                        </a>
+                    </michat-tab>
+                    <div class="nty h-full">
+                        <div class="flex w-full px-5 py-3">
+                            <input class="transition-all rounded-md w-full py-2 px-3 border outline-none border-gray-300 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:border-gray-100 " type="search" placeholder="Search" autocomplete="off">
+                        </div>
+                        <div class="flex flex-col gap-3 px-3 overflow-scroll h-[80%] pb-4">
+                            <% for( let i = 0; i < 20; i++ ) { %>
+                                <div class="bg-white cursor-pointer hover:border-purple-500 transition-all rounded-lg p-2 flex flex-row w-full shadow-lg border-[0.4px] border-purple-500/30">
+                                    <img src="/assets/image.jpg" class="h-16 w-16 rounded-full object-cover" alt="Picture">
+                                    <div class="w-full h-full flex flex-col">
+                                        <div class="flex flex-row ml-2">
+                                            <span class="flex-[80%] text-purple-600 font-medium">Jake Peregrino Velasco</span>
+                                            <div class="flex w-full justify-end flex-[20%]">
+                                                <span class="text-sm text-bluegray-500">1m</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex w-full pl-4 mt-2">
+                                            <p class="text-bluegray-900 text-sm">You : Hi</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="/js/ripple.js"></script>
-    <script>
-        const swiper = new Swiper(".mi_chat_post", {
-            direction: 'vertical',
-            spaceBetween: 10,
-            slidesPerView: 1,
-            mousewheel: true,
-            grabCursor: true,
-        })
-        swiper.on('reachEnd', function () {
-            console.log('last slide');
-        })
-        swiper.on('slideChange', function (e) {
-            console.log(e);
-        })
-    </script>
+    <script src="/js/slider.js"></script>
+    <script src="/js/home.js"></script>
 </body>
 </html>
