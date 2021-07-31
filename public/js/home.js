@@ -1,36 +1,25 @@
 'use strict'
 $(document).ready(() => {
     //realtime media query 
-    var size = window.matchMedia("(max-width: 767px)")
-    screen(size) // Call listener function at run time
-    size.addListener(screen)
-    async function screen() {
-        if (size.matches) { 
-            return true
-            
-        }
-        else{
-            return false
-        }
-    }
+    var screen = window.matchMedia("(max-width: 767px)")
     //comment icon click 
     $(".comment").click(function (e) {
         e.preventDefault()
-        if(screen()){
-            $(".nty_msg").removeClass("md:hidden")
-            $(".michat_cmts").addClass(`${$(".michat_cmts").attr("animate-in-mobile")} ms-500`)
+        if (screen.matches) { 
+            $(".cmts").removeClass("md:hidden")
+            $(".cmts").addClass($(".cmts").attr("animate-in"))
             setTimeout( () => {
-                $(".michat_cmts").removeClass(`${$(".michat_cmts").attr("animate-in-mobile")} ms-500`)
+                $(".cmts").removeClass($(".cmts").attr("animate-in"))
             }, 500)
         }
     })
     //close comment form, will fire in mobile only 
     $(".close_cmt").click( () => {
-        if(screen()){
-            $(".michat_cmts").addClass(`${$(".michat_cmts").attr("animate-out-mobile")} ms-500`)
+        if (screen.matches) { 
+            $(".cmts").addClass($(".cmts").attr("animate-out"))
             setTimeout( () => {
-                $(".michat_cmts").removeClass(`${$(".michat_cmts").attr("animate-out-mobile")} ms-500`)
-                $(".nty_msg").addClass("md:hidden")
+                $(".cmts").removeClass($(".cmts").attr("animate-out"))
+                $(".cmts").addClass("md:hidden")
             }, 500)
         }
     })

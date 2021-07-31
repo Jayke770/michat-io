@@ -2,6 +2,7 @@ node_modules/*
 tailwindcss/*
 views/local_cdn/*
 public/package/*
+views/*.html
 yarn-error.log
 tailwind.config.js
 .env
