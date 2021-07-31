@@ -618,6 +618,10 @@ video {
   position: relative;
 }
 
+.sticky {
+  position: sticky;
+}
+
 .left-16 {
   left: 4rem;
 }
@@ -1171,6 +1175,26 @@ video {
   background-color: rgba(244, 63, 94, var(--tw-bg-opacity));
 }
 
+.bg-orange-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(234, 88, 12, var(--tw-bg-opacity));
+}
+
+.bg-amber-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(245, 158, 11, var(--tw-bg-opacity));
+}
+
+.bg-teal-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(13, 148, 136, var(--tw-bg-opacity));
+}
+
+.bg-amber-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(180, 83, 9, var(--tw-bg-opacity));
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1358,6 +1382,10 @@ video {
 
 .pt-0 {
   padding-top: 0px;
+}
+
+.pt-20 {
+  padding-top: 5rem;
 }
 
 .text-center {
@@ -1605,6 +1633,10 @@ video {
 .first-letter\:text-purple-700::first-letter {
   --tw-text-opacity: 1;
   color: rgba(126, 34, 206, var(--tw-text-opacity));
+}
+
+.first\:mt-52:first-child {
+  margin-top: 13rem;
 }
 
 .hover\:border-purple-500:hover {
@@ -2030,6 +2062,10 @@ video {
 
   .sm\:gap-5 {
     gap: 1.25rem;
+  }
+
+  .sm\:gap-7 {
+    gap: 1.75rem;
   }
 
   .sm\:rounded-none {
