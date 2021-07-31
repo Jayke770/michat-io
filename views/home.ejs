@@ -9,11 +9,11 @@
         <link rel="stylesheet" href="/css/tailwindcss/tailwindcss.css">
         <%- include('cdn/home') %>
     </head>
-    <body class="bg-truegray-200 xsm:min-w-[300px]">
-        <michat-main class="bg-gradient-to-tl from-purple-500 to-purple-700 w-full h-screen flex flex-row gap-2 md:flex-col-reverse md:gap-0">
+    <body>
+        <michat-body class="flex bg-purple-400 h-screen flex-col-reverse w-full">
             <!-- Navigation -->
-            <div class="trasition-all px-1 py-3 bg-gray-50 h-full shadow-2xl md:h-auto md:py-1">
-                <div class="flex flex-col gap-4 justify-center items-center h-full transition-all md:flex-row">
+            <michat-navbar class="trasition-all px-1 py-1 bg-gray-50 h-auto shadow-2xl w-full">
+                <div class="flex flex-row gap-48 xl:gap-20 md:gap-10 sm:gap-5 justify-center items-center h-full transition-all">
                     <a href="#" class="rpl p-2 rounded-md text-3xl md:text-2xl text-purple-600 cursor-pointer">
                         <i class="fad fa-home"></i>
                     </a>
@@ -30,35 +30,8 @@
                         <i class="fad fa-user"></i>
                     </a>
                 </div>
-            </div>
-            <div class="w-[35vw] flex justify-center items-center overflow-hidden md:w-full md:h-full">
-                <div class="mi_chat_post w-[95%] h-[95%] md:w-full md:h-full">
-                    <div class="swiper-wrapper">
-                        <% for( let i = 0; i < 10; i++ ) { %>
-                            <div class="swiper-slide p-1 md:p-0">
-                                <div class="w-full h-full relative">
-                                    <video data-setup="{}"controls preload="none" class="video-js vjs-theme-fantasy rounded-xl h-full w-full md:rounded-none">
-                                        <source src="/assets/sample.mp4" type="video/mp4">
-                                        <p class="vjs-no-js">
-                                            To view this video please enable JavaScript, and consider upgrading
-                                            to a web browser that <a href="https://videojs.com/html5-video-support/"
-                                                target="_blank">supports HTML5 video</a>
-                                        </p>
-                                    </video>
-                                    <menu class="absolute bottom-10 right-1 flex justify-center items-center">
-                                        <div class="flex flex-col gap-2 px-2 w-full justify-center items-center">
-                                            <a class="comment rpl text-amber-500 cursor-pointer p-2">
-                                                <i class="fas fa-comment-lines text-3xl"></i>
-                                            </a>
-                                        </div>
-                                    </menu>
-                                </div>
-                            </div>
-                        <% } %>
-                    </div>
-                </div>
-            </div>
-        </michat-main>
+            </michat-navbar>
+        </michat-body>
         <script src="/js/ripple.js"></script>
         <script src="/js/slider.js"></script>
         <script src="/js/home.js"></script>

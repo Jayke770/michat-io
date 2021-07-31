@@ -1,7 +1,7 @@
 'use strict'
 const swiper = new Swiper(".mi_chat_post", {
     direction: 'vertical',
-    spaceBetween: 30,
+    spaceBetween: 10,
     slidesPerView: 1,
     mousewheel: true,
 })
