@@ -10,11 +10,32 @@
         <%- include('cdn/home') %>
     </head>
     <body>
-        <michat-body class="flex bg-purple-400 h-screen flex-col w-full">
-            <!-- Navigation -->
-            <michat-navbar class="trasition-all sticky px-1 py-1 bg-gray-50 h-auto shadow-2xl w-full">
-                <div class="flex flex-row gap-48 xl:gap-20 md:gap-10 sm:gap-7 justify-center items-center h-full transition-all">
-                    <a href="#" class="rpl p-2 rounded-md text-3xl md:text-2xl text-purple-600 cursor-pointer">
+        <div class="fixed w-full h-full right-0 top-0 left-0 bottom-0 bg-purple-300">
+            <div class="h-[calc(100%-56px)]">
+                <michat-posts class="block overflow-y-auto h-full">
+                    <div class="swiper-container post h-full">
+                        <div class="swiper-wrapper">
+                          <% for( let i = 0; i < 10; i++ ) { %>
+                            <div class="post<%-i%>  swiper-slide h-full">
+                                <video data-setup="{}" controls preload="auto" controls class="video-js vjs-theme-fantasy w-full h-full sm:object-fill">
+                                    <source src="/assets/sample.mp4">
+                                    <p class="vjs-no-js">
+                                        To view this video please enable JavaScript, and consider upgrading to a
+                                        web browser that
+                                        <a href="https://videojs.com/html5-video-support/" target="_blank"
+                                          >supports HTML5 video</a
+                                        >
+                                      </p>
+                                </video>
+                            </div>
+                          <% } %>
+                        </div>
+                    </div>
+                </michat-posts>
+            </div>
+            <div class="trasition-all shadow-xl bg-gray-50 h-[56px] w-full">
+                <div class="flex flex-row gap-48 xl:gap-20 md:gap-10 sm:gap-7 xsm:gap-6 xxsm:gap-4 justify-center items-center h-full transition-all">
+                    <a href="#" class="rpl p-2  rounded-md text-3xl md:text-2xl text-purple-600 cursor-pointer">
                         <i class="fad fa-home"></i>
                     </a>
                     <a href="#" class="rpl p-2 rounded-md text-3xl md:text-2xl text-purple-600 cursor-pointer">
@@ -30,13 +51,10 @@
                         <i class="fad fa-user"></i>
                     </a>
                 </div>
-            </michat-navbar>
-            <michat-main>
-               
-            </michat-main>
-        </michat-body>
+            </div>
+        </div>
         <script src="/js/ripple.js"></script>
-        <script src="/js/slider.js"></script>
         <script src="/js/home.js"></script>
+        <script src="/js/slider.js"></script>
     </body>
 </html>
