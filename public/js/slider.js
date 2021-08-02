@@ -23,3 +23,14 @@ const picture = new Swiper(".pictures", {
         type: 'fraction',
     },
 })
+
+//homepage
+const slide = new Swiper(".slide", {
+    direction: 'vertical',
+    mousewheel: true,
+    mousewheel: true,
+    pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+    },
+})

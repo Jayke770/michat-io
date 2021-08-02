@@ -9,7 +9,7 @@ app.get('/', async (req, res) => {
     return res.render("index")
 })
 
-//hompage 
+//homepage 
 app.get('/home', async (req, res) => {
     return res.render("home")
 })
