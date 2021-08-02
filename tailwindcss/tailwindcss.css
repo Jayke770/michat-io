@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* remove light blue tap effect in android*/ 
+a, button, p, div, span, i{
+    -webkit-tap-highlight-color: transparent;
+}
+/* end of remove light blue tap effect in android*/ 
+/*video.js*/ 
+
+.vjs-control-bar{}
+/* end of video.js*/
+
+/*swiper js */ 
+.swiper-pagination-fraction{
+    @apply text-white;
+}
+.swiper-pagination {
+    right: 4px !important;
+}
+.swiper-pagination-current{
+    @apply text-purple-500;
+}
+/*end of swiper js*/
+
+/*scrollbar */
+/* width */
+::-webkit-scrollbar {
+	@apply w-2 h-2 md:w-[2px];
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+	@apply bg-transparent;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+	@apply bg-purple-600 rounded-full;
+}
+
+/*end of scrollbar */
+
+/* animate.css duration */
+
+.ms-200 {
+    --animate-duration: 200ms;
+}
+
+.ms-300 {
+    --animate-duration: 300ms;
+}
+
+.ms-400 {
+    --animate-duration: 400ms;
+}
+
+.ms-500 {
+    --animate-duration: 500ms;
+}
+
+.ms-600{
+    --animate-duration: 600ms
+}
+
+.ms-700{
+    --animate-duration: 700ms
+}
+.ms-800{
+    --animate-duration: 800ms
+}
+.ms-900{
+    --animate-duration: 900ms
+}
+
+/* end of animate.css duration*/
