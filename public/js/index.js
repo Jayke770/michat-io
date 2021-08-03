@@ -24,65 +24,81 @@ $(document).ready(() => {
     })
 
     //signup 
-    $(".michat-create").submit(function(e){
+    $(".michat-create").submit(function (e) {
         e.preventDefault()
-        if(!creating){
+        if (!creating) {
             Swal.fire({
-                backdrop: true, 
-                showConfirmButton: false, 
+                backdrop: true,
+                showConfirmButton: false,
                 willOpen: () => {
                     Swal.showLoading()
                     $.ajax({
-                        xhr : function() {
+                        xhr: function () {
                             var xhr = new window.XMLHttpRequest()
-                            xhr.upload.addEventListener('progress', function(e) {
+                            xhr.upload.addEventListener('progress', function (e) {
                                 if (e.lengthComputable) {
                                     var percent = Math.round((e.loaded / e.total) * 100)
                                     console.log(percent)
                                 }
-            
+
                             });
                             return xhr;
                         },
-                        url: 'login/', 
-                        method: 'POST', 
+                        url: 'create/',
+                        method: 'POST',
                         cache: false,
                         timeout: 5000,
-                        processData : false,
-                        contentType : false,
+                        processData: false,
+                        contentType: false,
                         data: new FormData(this),
                         success: (data) => {
-                            if(data.status){
+                            if (data.status) {
                                 Swal.fire({
-                                    icon: 'success', 
-                                    title: data.text, 
-                                    allowOutsideClick: false, 
+                                    icon: 'success',
+                                    title: data.text,
+                                    allowOutsideClick: false,
                                     backdrop: true
                                 })
                             }
-                            else{
+                            else {
                                 Swal.fire({
-                                    icon: 'error', 
-                                    title: data.text, 
-                                    allowOutsideClick: false, 
+                                    icon: 'error',
+                                    title: data.text,
+                                    allowOutsideClick: false,
                                     backdrop: true
                                 })
                             }
-                        }, 
+                        },
                         error: (data) => {
-                            if(data.statusText === "timeout"){
+                            if (data.statusText === "timeout") {
                                 Swal.fire({
-                                    icon: 'info', 
-                                    title: 'Request Timeout', 
-                                    allowOutsideClick: false, 
+                                    icon: 'info',
+                                    title: 'Request Timeout',
+                                    allowOutsideClick: false,
                                     backdrop: true
                                 })
                             }
                         }
                     })
-                }, 
+                },
                 allowOutsideClick: () => !Swal.isLoading()
             })
         }
+    })
+    //login 
+    $(".login").submit(function (e) {
+        e.preventDefault()
+        $.ajax({
+            url: 'login/',
+            method: 'POST',
+            cache: false,
+            timeout: 5000,
+            processData: false,
+            contentType: false,
+            data: new FormData(this),
+            success: (data) => {
+                
+            }
+        })
     })
 })
