@@ -13,6 +13,7 @@ const users = require('./models/users')
 //connect to mongodb database 
 connectdb()
 async function connectdb(){
+    console.log("Connecting to database")
     try{
         await mongoose.connect(process.env.michatdb, {
             useNewUrlParser: true,
@@ -20,7 +21,7 @@ async function connectdb(){
         })
         console.log("Connected to database", process.env.michatdb)
     } catch(e){
-        console.warn("Error", e)
+        console.log("Error", e)
     }
 }
 
