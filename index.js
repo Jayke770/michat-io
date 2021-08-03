@@ -8,6 +8,21 @@ const io = require('socket.io')(http)
 const path = require('path')
 const dir = path.join(__dirname, './public')
 const appRoute = require('./routes/app')
+const mongoose = require('mongoose')
+const users = require('./models/users')
+//connect to mongodb database 
+connectdb()
+async function connectdb(){
+    try{
+        await mongoose.connect(process.env.michatdb, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        })
+        console.log("Connected to database", process.env.michatdb)
+    } catch(e){
+        console.warn("Error", e)
+    }
+}
 
 //app settings
 app.use(express.static(dir))
@@ -26,6 +41,6 @@ app.use(function(req, res, next) {
     res.status(404).send("404 NOT FOUND")
 })
 
-const server = http.listen(process.env.PORT || 8989, () =>{
+const server = http.listen(process.env.PORT || 8989, "192.168.254.154", () =>{
     console.log("Listening on " + server.address().address, server.address().port)
 })

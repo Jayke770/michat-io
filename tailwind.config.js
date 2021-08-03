@@ -4,7 +4,7 @@ module.exports = {
   purge: {
     content: ['./views/**/*.ejs']
   },
-  darkMode: 'class', // or 'media' or 'class'
+  darkMode: 'class',
   theme: {
     extend: {},
     colors: {

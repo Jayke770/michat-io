@@ -13,5 +13,12 @@ app.get('/', async (req, res) => {
 app.get('/home', async (req, res) => {
     return res.render("home")
 })
+
+///post requests 
+
+//login 
+app.post('/login', async (req, res) => {
+    
+})
 //export router
 module.exports = app
