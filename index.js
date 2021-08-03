@@ -12,6 +12,7 @@ const mongoose = require('mongoose')
 const users = require('./models/users')
 //connect to mongodb database 
 connectdb()
+console.log("Hmmmmm")
 async function connectdb(){
     console.log("Connecting to database")
     try{
